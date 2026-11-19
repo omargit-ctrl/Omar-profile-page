@@ -1,0 +1,75 @@
+:root {
+  box-sizing: border-box;
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --accent: #6d5dfc;
+  --accent-light: #eeecff;
+  --border: #e2e8f0;
+  --shadow: 0 18px 45px rgba(30, 41, 59, 0.09);
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark {
+  --bg: #101827;
+  --surface: #182337;
+  --text: #f1f5f9;
+  --muted: #a8b4c7;
+  --accent-light: #292854;
+  --border: #30405a;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+a { color: inherit; text-decoration: none; }
+.site-header { padding: 26px 7vw 0; }
+.navbar { max-width: 1120px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 28px; color: var(--muted); font-size: 0.95rem; }
+.nav-links a:hover, .primary-link:hover { color: var(--accent); }
+main { max-width: 1120px; margin: auto; padding: 0 7vw; }
+.hero { min-height: 580px; display: flex; align-items: center; justify-content: space-between; gap: 70px; padding: 84px 0; }
+.hero-copy { max-width: 650px; }
+.eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; margin: 0 0 14px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(2.5rem, 7vw, 5.2rem); line-height: 1.02; letter-spacing: -0.06em; margin-bottom: 25px; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 34px; }
+h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.intro { color: var(--muted); max-width: 560px; font-size: 1.08rem; margin-bottom: 30px; }
+.primary-link { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 800; }
+.photo-frame { width: min(34vw, 330px); aspect-ratio: 1; flex: 0 0 auto; padding: 12px; border-radius: 50%; background: var(--surface); box-shadow: var(--shadow); }
+.photo-frame img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.content-section, .contact-section { padding: 75px 0; }
+.section-heading { max-width: 720px; }
+.card-row { display: flex; gap: 22px; }
+.card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); transition: transform 0.2s ease, border-color 0.2s ease; }
+.card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.card-icon { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 25px; border-radius: 13px; background: var(--accent-light); color: var(--accent); font-weight: 800; font-size: 1.15rem; }
+.card p { color: var(--muted); margin-bottom: 0; }
+.contact-section { max-width: 700px; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); }
+.form-field { display: flex; flex-direction: column; gap: 7px; }
+label { font-weight: 700; font-size: 0.92rem; }
+input { width: 100%; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); padding: 13px 15px; font: inherit; }
+input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.submit-button { align-self: flex-start; cursor: pointer; border: 0; border-radius: 10px; background: var(--accent); color: #fff; padding: 13px 22px; font: inherit; font-weight: 800; }
+.submit-button:hover { filter: brightness(1.08); }
+.site-footer { max-width: 1120px; margin: auto; padding: 28px 7vw 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
+.theme-toggle { border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--surface); color: var(--text); cursor: pointer; font: inherit; }
+.theme-toggle:hover { border-color: var(--accent); }
+@media (max-width: 700px) {
+  .nav-links { gap: 13px; font-size: 0.82rem; }
+  .hero { flex-direction: column-reverse; align-items: flex-start; padding-top: 60px; }
+  .photo-frame { width: min(65vw, 280px); align-self: center; }
+  .card-row { flex-direction: column; }
+  .site-footer { flex-direction: column; align-items: flex-start; }
+}
